@@ -1,0 +1,168 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.44.2",
+  "hash": "9e57534b5eb3dacc0a62",
+  "publicPath": "/static/",
+  "outputPath": "C:\\Users\\rafal\\Desktop\\frontity-testuje\\build\\static",
+  "assetsByChunkName": {
+    "list": "list.module.js",
+    "my-frontity-project": [
+      "my-frontity-project.module.js",
+      "my-frontity-project.2757f2893136396b313c.hot-update.js"
+    ]
+  },
+  "assets": [
+    {
+      "name": "2757f2893136396b313c.hot-update.json",
+      "size": 61,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "images/about1.jpg",
+      "size": 110127,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/about2.jpg",
+      "size": 80888,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/contact-section.jpg",
+      "size": 327843,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/cooperate1.jpg",
+      "size": 162522,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/cooperate2.jpg",
+      "size": 74835,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/hero-photo.jpg",
+      "size": 289780,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "images/shovv.png",
+      "size": 1425,
+      "chunks": [],
+      "chunkNames": [],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "list.module.js",
+      "size": 48065,
+      "chunks": [
+        "list"
+      ],
+      "chunkNames": [
+        "list"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "my-frontity-project.2757f2893136396b313c.hot-update.js",
+      "size": 19847,
+      "chunks": [
+        "my-frontity-project"
+      ],
+      "chunkNames": [
+        "my-frontity-project"
+      ],
+      "info": {
+        "hotModuleReplacement": true,
+        "immutable": true
+      },
+      "emitted": false
+    },
+    {
+      "name": "my-frontity-project.module.js",
+      "size": 9606944,
+      "chunks": [
+        "my-frontity-project"
+      ],
+      "chunkNames": [
+        "my-frontity-project"
+      ],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "my-frontity-project": {
+      "chunks": [
+        "my-frontity-project"
+      ],
+      "assets": [
+        "my-frontity-project.module.js",
+        "my-frontity-project.2757f2893136396b313c.hot-update.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "my-frontity-project": {
+      "chunks": [
+        "my-frontity-project"
+      ],
+      "assets": [
+        "my-frontity-project.module.js",
+        "my-frontity-project.2757f2893136396b313c.hot-update.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "list": {
+      "chunks": [
+        "list"
+      ],
+      "assets": [
+        "list.module.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 5,
+      "debug": false
+    }
+  },
+  "children": []
+}
