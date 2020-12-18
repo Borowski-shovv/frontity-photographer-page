@@ -11,10 +11,13 @@ function Footer() {
                 </FooterCopyRights>
                 <FooterMenu>
                     <FooterMenuItems>
+                        <FooterMenuLink href="/polityka-prywatnosci">Polityka Prywatności</FooterMenuLink>
+                    </FooterMenuItems>
+                    <FooterMenuItems>
                         <FooterMenuLink href="/">O mnie</FooterMenuLink>
                     </FooterMenuItems>
                     <FooterMenuItems>
-                        <FooterMenuLink href="/timelaps">Film</FooterMenuLink>
+                        <FooterMenuLink href="/timelapse">Film</FooterMenuLink>
                     </FooterMenuItems>
                     <FooterMenuItems>
                         <FooterMenuLink href="/astrofoto">Fotografia</FooterMenuLink>
@@ -67,6 +70,7 @@ const FooterCopyRights = styled.p`
     @media (max-width: 768px) {
         order: 2;
         margin: 10px 0;
+        font-size: 10px;
     }
 `;
 
@@ -94,9 +98,10 @@ const FooterMenuLink = styled.a`
     text-transform: uppercase;
     color: #87949e !important;
     padding: 0 16px;
+    opacity: 0.7;
 
     &:hover {
-        font-weight: bold;
+        opacity: 1;
     }
 
     &:visited {
@@ -105,14 +110,20 @@ const FooterMenuLink = styled.a`
 `;
 
 const Manufacturer = styled.div`
-    width:100%;
-    text-align:center;
+    max-width: 1500px;
+    margin: 0 auto;
+    text-align:right;
     line-height:21px;
     font-size:11px;
     padding:10px 0px;
     letter-spacing:1px;
     color: #87949e;
     font-family: 'Raleway', sans-serif;
+
+
+    @media (max-width: 768px) {
+        text-align: center;
+    }
 `;
 
 const ShovvLogoLink = styled.a`
@@ -132,6 +143,7 @@ const ShovvLogo = styled.img`
     padding:0;
     vertical-align:middle;
     margin-top:-5px;
+    margin-right: 16px;
 `;
 
 

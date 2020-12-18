@@ -8,6 +8,7 @@ import tree from '../../images/cooperate1.jpg'
 import desert from '../../images/cooperate2.jpg'
 import StarIcon from '@material-ui/icons/Star';
 import mountains from '../../images/contact-section.jpg';
+import Link from "../link";
 
 function Home({state}) {
     return (
@@ -17,8 +18,8 @@ function Home({state}) {
                     <HeroTitle>Film i fotografia <HeroTitleSpan>woj. Podlaskie</HeroTitleSpan></HeroTitle>
                     <HeroText>Zapraszamy do współpracy</HeroText>
                     <HeroButtonsWrapper>
-                            <HeroButton href="/">Fotografia</HeroButton>
-                            <HeroButton href="/">Film</HeroButton>
+                            <HeroButton href="astrofoto">Fotografia</HeroButton>
+                            <HeroButton href="timelapse">Film</HeroButton>
                     </HeroButtonsWrapper> 
                 </HeroContentWrapper>  
             </HomeSectionBg>
@@ -177,7 +178,7 @@ function Home({state}) {
             <ContactSection>
                 <ContactSectionWrapper>
                     <ContactSectionTitle>Zapraszam do <span>współpracy</span></ContactSectionTitle>
-                    <ContactButton href="kontakt">Kontakt</ContactButton>
+                    <ContactButton link="kontakt">Kontakt</ContactButton>
                 </ContactSectionWrapper>
 
             </ContactSection>
@@ -219,6 +220,7 @@ const HeroTitle = styled.h1`
 
     @media (max-width: 560px) {
         font-size: 21px;
+
     }
 `;
     
@@ -237,15 +239,17 @@ const HeroText = styled.h3`
     font-weight: 100;
     text-align: center;
     color: #fff;
+    margin-top: 40px;
+    margin-bottom: 40px;
 
     @media (max-width: 560px) {
-        font-size: 21px;
-        margin-top: 20px;
+        font-size: 18px;
+        margin-top: 30px;
     }
 `;
 
 const HeroButtonsWrapper = styled.div`
-    margin: 30px auto;
+    margin: 70px auto 0;
     display: flex;
     justify-content: center;
 
@@ -271,7 +275,7 @@ const HeroButton = styled.a`
 
     @media (max-width: 560px) {
         margin: 0 auto 20px;
-        max-width: 150px;
+        width: 170px;
     }
 `;
 
@@ -300,8 +304,9 @@ const SectionTitle = styled.h3`
     }
 
     @media (max-width: 768px) {
-        font-size: 24px;
+        font-size: 30px;
         font-weight: 400;
+        line-height: 1.8;
     }
 `;
 
@@ -309,6 +314,10 @@ const AboutContentWrapper = styled.div`
     max-width: 1500px;
     margin: 0 auto;
     padding: 0 40px;
+
+    @media (max-width: 768px) {
+        padding: 0 15px;
+    }
 `;
 const MyStorySection = styled.div`
 
@@ -326,6 +335,8 @@ const AboutRow = styled.div`
 
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
+        padding-bottom: 0;
+        margin-top: 0;
     }
 `;
 
@@ -354,16 +365,23 @@ const AboutTextWrapper = styled.div`
 const AboutTitle = styled.h2`
     color: #87949e;
     margin-bottom: 30px;
+    font-size: 30px;
     font-family: 'Railway', sans-serif;
+
+    @media (max-width: 768px) {
+        font-size: 24px;
+    }
 `;
 
 const AboutText = styled.p`
     color: #87949e;
     line-height: 1.8;
     width: 90%;
+    font-size: 18px;
 
     @media (max-width: 768px) {
         width: 100%;
+        font-size: 16px;
     }
 `;
 
@@ -382,6 +400,7 @@ const CompetitionWrapper = styled.div`
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
         gap: 0px;
+        padding: 0 15px;
     }
 `;
 
@@ -398,8 +417,15 @@ const CompetitionTextWrapper = styled.div`
     justify-content: space-evenly;
     margin: 40px 0;
 
+
     & > svg {
         fill: #1976d2;
+    }
+
+    @media (max-width: 768px) {
+       flex-direction: column;
+       align-items: center;
+       margin: 30px 0;
     }
 `;
 
@@ -407,6 +433,13 @@ const CompetitionText = styled.p`
     color: #87949e;
     line-height: 1.8;
     width: 80%;
+    font-size: 18px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        font-size: 16px;
+        margin-top: 30px;
+     }
 `;
 
 const PublicationSection = styled.section`
@@ -414,6 +447,11 @@ const PublicationSection = styled.section`
     margin: 70px auto;
     padding: 0 40px;
     text-align: center;
+
+    @media (max-width: 768px) {
+        padding: 0 15px;
+        margin-top: 30px;
+    }
 `;
 
 const PublicationText = styled.p`
@@ -422,9 +460,11 @@ const PublicationText = styled.p`
     line-height: 1.8;
     font-family: 'Nunito Sans', sans-serif;
     margin: 0 auto;
+    font-size: 18px;
 
     @media (max-width: 768px) {
         width: 100%;
+        font-size: 16px;
     }
 `;
 
@@ -433,6 +473,10 @@ const CooperateSection = styled.section`
     margin-top: 70px;
     background: #f9f9fa;
     padding-top: 20px;
+
+    @media (max-width: 768px) {
+       margin-top: 30px;
+    }
 `;
 
 const CooperateWraper = styled.div`
@@ -445,6 +489,9 @@ const CooperateWraper = styled.div`
 
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
+        padding: 0 15px;
+        margin-top: 30px;
+        margin-bottom: 30px;
     }
 `;
 
@@ -476,14 +523,22 @@ const CooperateText = styled.p`
     line-height: 1.8;
     font-family: 'Nunito Sans', sans-serif;
     margin: 30px 0;
+    font-size: 18px;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
 `;
 
 const StarSection = styled.section`
     max-width: 1500px;
     padding: 0 40px;
     margin: 50px auto;
-    text-align: center
+    text-align: center;
 
+    @media (max-width: 768px) {
+        padding: 0 15px;
+    }
 `;
 
 const StarSectionWrapper = styled.div`
@@ -491,6 +546,7 @@ const StarSectionWrapper = styled.div`
     margin: 0 auto;
 
     & > svg {
+        font-size: 50px;
         fill: #1976d2
     }
 
@@ -500,9 +556,9 @@ const StarSectionWrapper = styled.div`
 `;
 
 const StartSectionText = styled.h3`
-    margin-top: 40px;
-    color: #87949e;
-    font-size: 21;
+    margin-top: 30px;
+    color: #576671;
+    font-size: 30;
     line-height: 1.8;
     font-family: 'Railway', sans-serif;
 `;
@@ -541,7 +597,7 @@ export const ContactSectionTitle = styled.h3`
     }
 `;
 
-export const ContactButton = styled.a`
+export const ContactButton = styled(Link)`
     border: none;
     background: #1976d2;
     outline: none;
@@ -554,5 +610,4 @@ export const ContactButton = styled.a`
     letter-spacing: 1px;
     cursor: pointer;
     margin: 40px auto 0;
-}
 `;

@@ -2,7 +2,7 @@ const settings = {
   "name": "my-frontity-project",
   "state": {
     "frontity": {
-      "url": "https://test.frontity.org",
+      "url": "http://api-tech.pl/",
       "title": "Fotografia - Szczepan Skibicki",
       "description": "Fotografia - Film - Szczepan Skibicki"
     }
@@ -80,8 +80,9 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "api": "http://moja-pompa.pl/skibicki/wp-json/"
-        }
+          "api": "http://moja-pompa.pl/skibicki/wp-json/",
+        },
+        
       }
     },
     "@frontity/tiny-router",

@@ -4,42 +4,39 @@ import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-const AstroPage = ({ state, libraries }) => {
+const GoryPage = ({ state, libraries }) => {
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
- 
+
   const [data, setData] = useState({
     isReady: false,
     items: []
   });
-
+  
   useEffect(() => {
     getMedia( libraries, state, setData);
-   
   }, [])
 
   const images = data.isReady && data.items.map(({ type, id }) => state.source[type][id])
-  console.log('data', images)
+
   let imageLinks = [];
   let imageSmall = [];
 
    images && images.map(image => {
      imageLinks.push({
          src: image.media_details.sizes.full.source_url,
-          width: 4,
-          height: 3,
-          title: image.title.rendered,
+             width: 4,
+            height: 3
        })
      });
 
-   images && images.map(image => {
+     images && images.map(image => {
       imageSmall.push({
          src: image.media_details.sizes.medium.source_url,
          width: 4,
-         height: 3,
-
+         height: 3
        })
-     });
+  });
 
   const openLightbox = useCallback((event, { photo, index }) => {
     setCurrentImage(index);
@@ -53,37 +50,37 @@ const AstroPage = ({ state, libraries }) => {
 
   return (
     <>
-    {data.items.length === 0 ? 
+       {data.items.length === 0 ? 
 
-      < BackdropWrapper>
-          <Indicator color="inherit" />
-      </ BackdropWrapper>
-    
-    :
-    <GalleryWrapper>
-      <Gallery photos={imageSmall} onClick={openLightbox}/>
-      <ModalGateway>
-      {viewerIsOpen ? (
-        <Modal onClose={closeLightbox}>
-          <Carousel
-            currentIndex={currentImage}
-            views={imageLinks.map(x => ({
-              ...x,
-              srcset: x.srcSet,
-              caption: x.title,
-              
-            }))}
-          />
-        </Modal>
-      ) : null}
-    </ModalGateway> 
-</GalleryWrapper>
-    }
+      <BackdropWrapper>
+        <Indicator color="inherit" />
+      </BackdropWrapper>
+
+      :
+
+      <GalleryWrapper>
+        <Gallery photos={imageSmall} onClick={openLightbox}/>
+        <ModalGateway>
+          {viewerIsOpen ? (
+                    <Modal onClose={closeLightbox}>
+                      <Carousel
+                        currentIndex={currentImage}
+                        views={imageLinks.map(x => ({
+                          ...x,
+                          srcset: x.srcSet,
+                          caption: x.title
+                        }))}
+                      />
+                    </Modal>) 
+                  : null}
+          </ModalGateway> 
+        </GalleryWrapper>
+        }
     </>
   );
 };
 
-export default connect(AstroPage)
+export default connect(GoryPage)
 
 const getMedia = async ( libraries, state, setData) => {
 
@@ -91,7 +88,7 @@ const getMedia = async ( libraries, state, setData) => {
   const response = await libraries.source.api.get({
     endpoint: "media",
     params: { 
-        parent: "43",
+        parent: "241",
         per_page: '100'
     }, 
   });
@@ -101,7 +98,6 @@ const getMedia = async ( libraries, state, setData) => {
     isReady: true,
     items: entitiesAdded
   });
-
 };
 
 const GalleryWrapper = styled.div`

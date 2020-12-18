@@ -53,14 +53,18 @@ const Container = styled.div`
 `;
 
 const Title = styled.h2`
-margin: 0;
-display: flex;
-flex-wrap: nowrap;
+  margin: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 30px;
 
+  @media (max-width: 768px) {
+    font-size: 18px;
+
+  }
 `;
 
 const TitleSpan = styled.span`
-    font-size: 24px;
     font-weight: 100;
     color: #fff;
 `;
@@ -73,11 +77,10 @@ const StyledLink = styled(Link)`
 
 const PageTitleWrapper = styled.div`
   width: 100%;
-  height: 200px;
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  bottom: 10%;
+  bottom: 0%;
   max-width: 1500px;
 
   @media screen and (max-width: 560px) {
@@ -95,6 +98,7 @@ const BreadCrumbsWrapper = styled.p`
   margin-top: 30px;
   font-weight: 100;
 
-
-
-  `;
+  @media screen and (max-width: 768px) {
+    margin-top: 0px;
+  }
+`;

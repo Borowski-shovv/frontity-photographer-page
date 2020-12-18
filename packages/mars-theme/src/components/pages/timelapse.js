@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback} from 'react';
 import { connect, styled } from 'frontity';
 import parse from 'html-react-parser';
-
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const TimelapsePage = ({ state, libraries }) => {
  
@@ -28,9 +28,10 @@ const TimelapsePage = ({ state, libraries }) => {
 
    const nowatablica = [youtubeGetMovies];
    
-    console.log('poka co masz', nowatablica[0][0]);
+    // console.log('poka co masz', nowatablica[0][0]);
 
-    console.log('typ tablicy', typeof(nowatablica[0][0]))
+    // console.log('typ tablicy', typeof(nowatablica[0][0]))
+    
     let parseHtml = null;
     if(nowatablica[0][0] != undefined) {
         parseHtml = parse(nowatablica[0][0])
@@ -38,9 +39,17 @@ const TimelapsePage = ({ state, libraries }) => {
 
   return (
     <>
+        {data.items.length === 0 ? 
+
+        <BackdropWrapper>
+          <Indicator color="inherit" />
+        </BackdropWrapper>
+
+        :
         <GalleryWrapper>
           {parseHtml}
         </GalleryWrapper>
+      }
     </>
   );
 };
@@ -115,5 +124,23 @@ export const GalleryWrapper = styled.div`
       height: auto;
     }
   }
+
+`;
+
+const BackdropWrapper = styled.div`
+background: black;
+  opacity: 0.5;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  padding-top: 100px;
+`;
+
+const Indicator = styled(CircularProgress)`
+height: 100px;
+color: white;
+position:relative;
+left: 50%;
+transfrom: translateX(-50%);
 
 `;

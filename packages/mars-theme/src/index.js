@@ -30,21 +30,20 @@ const astroHandler = {
   pattern: "/astrofoto/",
   func: ({ state }) => {
     state.source.data["/astrofoto/"].isAstroPage = true;
-    state.source.data["/astrofoto/"].isArchive = false;
   }
 }
 const goryHandler = {
   pattern: "/gory/",
   func: ({ state }) => {
     state.source.data["/gory/"].isGoryPage = true;
-    state.source.data["/gory/"].isArchive = false;
+
+
   }
 }
 const wadirumHandler = {
   pattern: "/wadirum/",
   func: ({ state }) => {
     state.source.data["/wadirum/"].isWadirumPage = true;
-    state.source.data["/wadirum/"].isArchive = false;
   }
 }
 
@@ -52,37 +51,41 @@ const colaboHandler = {
   pattern: "/wspolpraca/",
   func: ({ state }) => {
     state.source.data["/wspolpraca/"].isColaboPage = true;
-    state.source.data["/wspolpraca/"].isArchive = false;
   }
 }
 const timelapseHandler = {
   pattern: "/timelapse/",
   func: ({ state }) => {
     state.source.data["/timelapse/"].isTimelapsePage = true;
-    state.source.data["/timelapse/"].isArchive = false;
   }
 }
 const commercialHandler = {
   pattern: "/komercyjne/",
   func: ({ state }) => {
     state.source.data["/komercyjne/"].isCommercialPage = true;
-    state.source.data["/komercyjne/"].isArchive = false;
   }
 }
 const goPodlasieHandler = {
   pattern: "/go-podlasie/",
   func: ({ state }) => {
     state.source.data["/go-podlasie/"].isGoPodlasiePage = true;
-    state.source.data["/go-podlasie/"].isArchive = false;
   }
 }
+
 const contactHandler = {
   pattern: "/kontakt/",
   func: ({ state }) => {
     state.source.data["/kontakt/"].isContactPage = true;
-    state.source.data["/kontakt/"].isArchive = false;
   }
 }
+
+const privacyPolicyHandler = {
+  pattern: "/polityka-prywatnosci/",
+  func: ({ state }) => {
+    state.source.data["/polityka-prywatnosci/"].isPolitykaPage = true;
+  }
+}
+
 
 const marsTheme = {
   name: "@frontity/mars-theme",
@@ -114,6 +117,9 @@ const marsTheme = {
    * Frontity like libraries.
    */
   actions: {
+    actions: {
+
+    },
     theme: {
       toggleMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = !state.theme.isMobileMenuOpen;
@@ -137,10 +143,11 @@ const marsTheme = {
         libraries.source.handlers.push(commercialHandler);
         libraries.source.handlers.push(goPodlasieHandler);
         libraries.source.handlers.push(contactHandler);
+        libraries.source.handlers.push(privacyPolicyHandler);
       },
       
       beforeSSR: async ({actions}) => {
-         await actions.source.fetch("/kontakt");
+         await actions.source.fetch("/contact");
         }
       },
     },

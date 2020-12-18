@@ -17,6 +17,10 @@
   },
   "prettier": {},
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.13",
     "@frontity/core": "^1.9.1",
     "@frontity/html2react": "^1.5.0",
     "@frontity/mars-theme": "./packages/mars-theme",
@@ -27,7 +31,8 @@
     "frontity": "^1.13.0",
     "frontity-contact-form-7": "^0.1.7",
     "html-react-parser": "^0.14.2",
-    "react-grid-gallery": "^0.5.5",
+    "react-cookie-consent": "^6.2.1",
+    "react-google-recaptcha": "^2.1.0",
     "react-images": "^1.0.0",
     "react-photo-gallery": "^8.0.0"
   },

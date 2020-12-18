@@ -3,6 +3,8 @@ import { connect, styled } from "frontity";
 import Link from "./link";
 import SubMenu from './submenu';
 import KeyboardArrowDownOutlinedIcon from '@material-ui/icons/KeyboardArrowDownOutlined';
+import arrowDown from '../images/down-chevron.png'
+
 /**
  * Navigation Component
  *
@@ -20,7 +22,7 @@ const Nav = ({ state }) => (
           <Link link={link} aria-current={isCurrentPage ? "page" : undefined}>
             {name}
           </Link>
-          {submenuArr.length > 0 ? <KeyboardArrowDownOutlinedIcon/> : null}
+          {submenuArr.length > 0 ? <img src={arrowDown} /> : null}
           <SubMenuWrapper>
             {
               submenuArr.length > 0 ? submenuArr.map((subitem) => {
@@ -72,6 +74,7 @@ const NavItem = styled.div`
   text-transform: uppercase;
   font-weight: bold;
   display: flex;
+ 
 
   &:hover {
     color: #b9b9b9;
@@ -80,6 +83,12 @@ const NavItem = styled.div`
     display: block;
     margin-top: 25px;
     }
+  }
+
+  & > img {
+    height: 12px;
+    width: 12px;
+    margin: 8px 0 0 5px;
   }
 
   & > a {
