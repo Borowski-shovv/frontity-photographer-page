@@ -1,6 +1,7 @@
 import React from 'react';
 import { styled } from 'frontity';
 import shovv from '../images/shovv.png';
+import Link from "./link";
 
 function Footer() {
     return (
@@ -11,22 +12,22 @@ function Footer() {
                 </FooterCopyRights>
                 <FooterMenu>
                     <FooterMenuItems>
-                        <FooterMenuLink href="/polityka-prywatnosci">Polityka Prywatności</FooterMenuLink>
+                        <FooterMenuLink><Link link="/polityka-prywatnosci">Polityka Prywatności</Link></FooterMenuLink>
                     </FooterMenuItems>
                     <FooterMenuItems>
-                        <FooterMenuLink href="/">O mnie</FooterMenuLink>
+                        <FooterMenuLink><Link link="/">O mnie</Link></FooterMenuLink>
                     </FooterMenuItems>
                     <FooterMenuItems>
-                        <FooterMenuLink href="/timelapse">Film</FooterMenuLink>
+                        <FooterMenuLink href="/timelapse/"><Link link="/wspolpraca">Film</Link></FooterMenuLink>
                     </FooterMenuItems>
                     <FooterMenuItems>
-                        <FooterMenuLink href="/astrofoto">Fotografia</FooterMenuLink>
+                        <FooterMenuLink><Link link="/astrofoto/">Fotografia</Link></FooterMenuLink>
                     </FooterMenuItems>
                     <FooterMenuItems>
-                        <FooterMenuLink href="/wspolpraca">Współpraca</FooterMenuLink>
+                        <FooterMenuLink><Link link="/wspolpraca/">Współpraca</Link></FooterMenuLink>
                     </FooterMenuItems>
                     <FooterMenuItems>
-                        <FooterMenuLink href="/kontakt">Kontakt</FooterMenuLink>
+                        <FooterMenuLink><Link link="/kontakt/">Kontakt</Link></FooterMenuLink>
                     </FooterMenuItems>
                 </FooterMenu>
             </FooterContent>
@@ -94,11 +95,11 @@ const FooterMenuItems = styled.li`
     }
 `;
 
-const FooterMenuLink = styled.a`
+const FooterMenuLink = styled.p`
     text-transform: uppercase;
-    color: #87949e !important;
     padding: 0 16px;
     opacity: 0.7;
+    color: #87949e !important;
 
     &:hover {
         opacity: 1;
@@ -106,6 +107,10 @@ const FooterMenuLink = styled.a`
 
     &:visited {
         font-weight: bold;
+    }
+
+    & > a {
+        color: #87949e !important;
     }
 `;
 

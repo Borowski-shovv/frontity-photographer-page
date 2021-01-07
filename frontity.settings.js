@@ -80,7 +80,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "api": "http://moja-pompa.pl/skibicki/wp-json/",
+          "api": "https://api.skibickifoto.pl/wp-json/",
         },
         
       }
